@@ -1,0 +1,86 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00415a;
+}
+.box{
+	position: relative;
+	width: 400px;
+	height: 400px;
+	background: linear-gradient(#6ab9ff, #0090d2);
+	border-radius: 50%;
+	border: 10px solid #fff;
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, .8),
+	0 20px 100px rgba(0, 0, 0, .8);
+	overflow: hidden;
+}
+.plane{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: animatePlane 1s linear infinite;
+}
+.plane img{
+	position: relative;
+	width: 12rem;
+	z-index: 3;
+}
+@keyframes animatePlane{
+	0%{
+		transform: translate(2px, 2px);
+	}
+	50%{
+		transform: translate(-2px, -2px);
+	}
+	100%{
+		transform: translate(2px, 2px);
+	}
+}
+.cloud{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.cloud img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: .8;
+	animation: animateCloud 1s linear infinite; 
+	width: 10rem;
+	z-index: 2;
+}
+.cloud img:nth-child(1){
+	top: 50px;
+	animation: animateCloud 1.25s linear infinite;
+	animation-delay: -2s;
+}
+.cloud img:nth-child(2){
+	top: 180px;
+	animation: animateCloud 1 linear infinite;
+	animation-delay: -1s;
+}
+.cloud img:nth-child(3){
+	top: 100px;
+	animation: animateCloud .75s linear infinite;
+	animation-delay: -2.5s;
+}
+@keyframes animateCloud{
+	0%{
+		transform: translateX(400px);
+	}
+	40%, 100%{
+		transform: translateX(-400px);
+	}
+}
